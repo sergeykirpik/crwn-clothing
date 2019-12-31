@@ -2,7 +2,9 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
 const onToken = token => {
-  console.log(token);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(token);
+  }
   alert('Payment Successful');
 };
 
