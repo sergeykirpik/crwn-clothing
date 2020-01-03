@@ -2,7 +2,9 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import './checkout-item.styles.scss';
+// import './checkout-item.styles.scss';
+import { CheckoutItemContainer } from './checkout-item.styles';
+
 import {
   clearItemFromCart,
   addItem,
@@ -12,7 +14,7 @@ import {
 const CheckoutItem = ({ cartItem, addItem, removeItem, clearItemFromCart }) => {
   const { imageUrl, name, quantity, price } = cartItem;
   return (
-    <div className="checkout-item">
+    <CheckoutItemContainer>
       <div className="image-container">
         <img src={imageUrl} alt="item" />
       </div>
@@ -33,7 +35,7 @@ const CheckoutItem = ({ cartItem, addItem, removeItem, clearItemFromCart }) => {
       >
         &#10005;
       </div>
-    </div>
+    </CheckoutItemContainer>
   );
 };
 

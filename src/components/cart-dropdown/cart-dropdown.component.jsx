@@ -6,13 +6,14 @@ import { withRouter } from 'react-router-dom';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { toggleCartDropdown } from '../../redux/cart/cart.actions';
 
-import './cart-dropdown.styles.scss';
+// import './cart-dropdown.styles.scss';
+import { CartDropDownContainer } from './cart-dropdown.styles';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 
 const CartDropdown = ({ cartItems, history, dispatch }) => (
-  <div className="cart-dropdown">
+  <CartDropDownContainer>
     {cartItems.length ? (
       <div className="cart-items">
         {cartItems.map(item => (
@@ -30,7 +31,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
     >
       GO TO CHECKOUT
     </CustomButton>
-  </div>
+  </CartDropDownContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
